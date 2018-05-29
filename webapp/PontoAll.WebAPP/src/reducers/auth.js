@@ -1,4 +1,4 @@
-export function authentication(state=[], action) {
+export function authReducer(state=[], action) {
 
     if (action.type === 'LOGIN') {
         

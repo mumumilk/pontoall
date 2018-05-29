@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'semantic-ui-react'
+import { Form, Button, Icon } from 'semantic-ui-react'
 import styled from 'styled-components';
+import background from '../assets/img/login-background.png';
+import { Link } from 'react-router-dom';
 
 const LoginBackground = styled.section`
     width: 100vw;
@@ -34,11 +36,24 @@ const Title = styled.h1`
     font-size: 2.5em;
 `;
 
+const BackButton = styled.span`
+    position: absolute;
+    left: 10px;
+    top: 10px;
+`;
 
 export class FormContainer extends Component {
     render() {
         return (
             <FormBackground>
+                <BackButton>
+                    <Link to={'/'}>
+                        <Button icon labelPosition='left'>
+                            Voltar
+                            <Icon name='left arrow' />
+                        </Button>
+                    </Link>
+                </BackButton>
                 <Title>Login</Title>
                 <LoginForm/>
             </FormBackground>
@@ -63,7 +78,7 @@ export class LoginForm extends Component {
                 <FormGroup widths='equal'>
                     <Form.Input fluid label='E-mail' type="email" placeholder='E-mail' />
                     <Form.Input fluid label='Senha' type="password" placeholder='Senha' />
-                    <Button loading color='violet' size="huge">Entrar</Button>
+                    <Button  color='violet' size="huge">Entrar</Button>
                 </FormGroup>
         );
     }
@@ -72,7 +87,9 @@ export class LoginForm extends Component {
 const ImgBackground = styled.div`
     height: 100vh;
     flex: 3;
-    background: #a79bff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(${background});
 `;
 
 export class ImgContainer extends Component {

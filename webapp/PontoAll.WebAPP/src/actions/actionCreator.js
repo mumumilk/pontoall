@@ -1,3 +1,3 @@
-export function signin() {
-    return { type: 'LOGIN' };
+export function signin(email, password) {
+    return { type: 'LOGIN', email, password };
 }
