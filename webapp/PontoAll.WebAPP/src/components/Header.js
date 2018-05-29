@@ -30,7 +30,7 @@ export default class Header extends Component {
                 <HeaderContainer>
                     <Logo/>
                     <div>
-                        <Link to={'/login'}>
+                        <Link to="/auth/login">
                             <Button inverted color='violet' size="huge">Entrar</Button>
                         </Link>
                     </div>
